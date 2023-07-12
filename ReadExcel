@@ -2,12 +2,13 @@ using UnityEngine;
 using System.Collections.Generic;
 
 public class ReadExcel : MonoBehaviour
-
+{
     public TextAsset txt;
     public string[,] Sentence;
     int lineSize, rowSize;
-    
-     string currentText = txt.text.Substring(0, txt.text.Length - 1);
+    public void readEx(){
+
+        string currentText = txt.text.Substring(0, txt.text.Length - 1);
         string[] line = currentText.Split('\n');
         lineSize = line.Length;
         rowSize = line[0].Split('\t').Length;
@@ -21,3 +22,5 @@ public class ReadExcel : MonoBehaviour
                 Sentence[i, j] = row[j];
             }
         }
+    }
+}
